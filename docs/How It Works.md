@@ -1,7 +1,7 @@
-# How It Works
+# [How It Works](https://letsencrypt.org/how-it-works/)
 
 ## 
->
+> 
 The objective of Let’s Encrypt and the ACME protocol is to make it possible to set up an HTTPS server and have it automatically obtain a browser-trusted certificate, without any human intervention. This is accomplished by running a certificate management agent on the web server.
 
 To understand how the technology works, let’s walk through the process of setting up https://example.com/ with a certificate management agent that supports Let’s Encrypt.
@@ -11,7 +11,8 @@ There are two steps to this process. First, the agent proves to the CA that the 
 
 ## Domain Validation
 
->
+> 
+
 Let’s Encrypt identifies the server administrator by public key. The first time the agent software interacts with Let’s Encrypt, it generates a new key pair and proves to the Let’s Encrypt CA that the server controls one or more domains. This is similar to the traditional CA process of creating an account and adding domains to that account.
 
 To kick off the process, the agent asks the Let’s Encrypt CA what it needs to do in order to prove that it controls example.com. The Let’s Encrypt CA will look at the domain name being requested and issue one or more sets of challenges. These are different ways that the agent can prove control of the domain. For example, the CA might give the agent a choice of either:
@@ -32,7 +33,8 @@ If the signature over the nonce is valid, and the challenges check out, then the
 
 ## Certificate Issuance and Revocation
 
->
+> 
+
 Once the agent has an authorized key pair, requesting, renewing, and revoking certificates is simple—just send certificate management messages and sign them with the authorized key pair.
 
 To obtain a certificate for the domain, the agent constructs a PKCS#10 Certificate Signing Request that asks the Let’s Encrypt CA to issue a certificate for example.com with a specified public key. As usual, the CSR includes a signature by the private key corresponding to the public key in the CSR. The agent also signs the whole CSR with the authorized key for example.com so that the Let’s Encrypt CA knows it’s authorized.
