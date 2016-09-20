@@ -1,6 +1,6 @@
 # FAQ
 
-* Last updated: July 07, 2016 | See all Documentation
+### Last updated: July 07, 2016 | See all Documentation
 
 ## Are certificates from Let’s Encrypt trusted by my browser?
 
